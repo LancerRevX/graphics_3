@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html {
+                height: 100%;
+                box-sizing: border-box;
+                padding: 16px;
+            }
+
+            body {
+                margin: 0;
+                display: grid;
+                grid-template-rows: auto 1fr;
+                height: 100%;
+            }
+
+            #settings {
+                margin-bottom: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="settings">
+            <label>
+                Число параллелей
+                <input type="number" id="width_segments_input" value="8">
+            </label>
+            <label>
+                Число меридианов
+                <input type="number" id="height_segments_input" value="8">
+            </label>
+            <label>
+                Радиус сферы
+                <input type="number" id="radius_input" value="128">
+            </label>
+            <label>
+                Точка наблюдения
+                <input type="number" id="camera_x_input" placeholder="x" value="0">
+                <input type="number" id="camera_y_input" placeholder="y" value="0">
+                <input type="number" id="camera_z_input" placeholder="z" value="512">
+            </label>
+            <label>
+                Проекция
+                <select id="projection_select">
+                    <option value="parallel">Параллельная</option>
+                    <option value="perspective">Перспективная</option>
+                </select>
+            </label>
+            <button id="build_button">Построить сферу</button>
+        </div>
+        <div id="canvas"></div>
+
+        <script src="scripts/three.js"></script>
+        <script src="scripts/main.js"></script>
+    </body>
+</html>
